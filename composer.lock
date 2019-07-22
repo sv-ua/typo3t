@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "24c996826f6f40317a191f1308624fcd",
+    "content-hash": "474a76d86c8314bb0b9e89b2d1f8d220",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -2021,6 +2021,66 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "fluidtypo3/vhs",
+            "version": "5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FluidTYPO3/vhs.git",
+                "reference": "93bd3ba44406f69e297c4ea6193f0bfae4585e3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FluidTYPO3/vhs/zipball/93bd3ba44406f69e297c4ea6193f0bfae4585e3d",
+                "reference": "93bd3ba44406f69e297c4ea6193f0bfae4585e3d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "typo3/cms-backend": "^8.7 || ^9 || dev-master",
+                "typo3/cms-core": "^8.7 || ^9 || dev-master",
+                "typo3/cms-extbase": "^8.7 || ^9 || dev-master",
+                "typo3/cms-fluid": "^8.7 || ^9 || dev-master",
+                "typo3/cms-frontend": "^8.7 || ^9 || dev-master"
+            },
+            "replace": {
+                "typo3-ter/vhs": "self.version",
+                "vhs": "self.version"
+            },
+            "require-dev": {
+                "fluidtypo3/development": "^4.0"
+            },
+            "suggest": {
+                "ext-tidy": "Allows to make use of the tidy ViewHelper"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": "build/web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FluidTYPO3\\Vhs\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "The vhs package from FluidTYPO3",
+            "homepage": "https://fluidtypo3.org",
+            "keywords": [
+                "TYPO3 CMS",
+                "fedext",
+                "fluid",
+                "templating",
+                "utility",
+                "viewhelper"
+            ],
+            "time": "2019-04-01T12:17:09+00:00"
+        },
         {
             "name": "ichhabrecht/mask-export",
             "version": "2.3.0",

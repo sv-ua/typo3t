@@ -119,11 +119,14 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'mask' => [
+            'packagePath' => 'typo3conf/ext/mask/',
+        ],
+        'mask_export' => [
+            'packagePath' => 'typo3conf/ext/mask_export/',
+        ],
         'kpww' => [
             'packagePath' => 'typo3conf/ext/kpww/',
-        ],
-        'realurl' => [
-            'packagePath' => 'typo3conf/ext/realurl/',
         ],
         'vhs' => [
             'packagePath' => 'typo3conf/ext/vhs/',

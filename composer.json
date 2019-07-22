@@ -13,7 +13,8 @@
 	"require-dev" : {
 		"mask/mask": "^3.3.3",
 		"ichhabrecht/mask-export": "*",
-		"kpww/kpww": "^1.1.0"
+		"kpww/kpww": "^1.1.0",
+		"fluidtypo3/vhs": "^5.2.0"
 	},
 	"extra": {
 		"typo3/cms": {
