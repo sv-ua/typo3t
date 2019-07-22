@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81fd78c5c784892ef9696f741e664509",
+    "content-hash": "24c996826f6f40317a191f1308624fcd",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -2020,7 +2020,153 @@
             "time": "2019-05-07T07:07:18+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "ichhabrecht/mask-export",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/IchHabRecht/mask_export.git",
+                "reference": "b18604799cf52d65d591d0a57953f5c808623d3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/IchHabRecht/mask_export/zipball/b18604799cf52d65d591d0a57953f5c808623d3c",
+                "reference": "b18604799cf52d65d591d0a57953f5c808623d3c",
+                "shasum": ""
+            },
+            "require": {
+                "mask/mask": "^2.0 || ^3.0 || ^4.0",
+                "typo3/cms-core": "^7.6 || ^8.7 || ^9.5",
+                "typo3/cms-extbase": "^7.6 || ^8.7 || ^9.5",
+                "typo3/cms-fluid": "^7.6 || ^8.7 || ^9.5"
+            },
+            "replace": {
+                "mask_export": "self.version",
+                "typo3-ter/mask-export": "self.version"
+            },
+            "require-dev": {
+                "nimut/testing-framework": "2.x-dev || 3.x-dev || 4.x-dev",
+                "typo3/cms-fluid-styled-content": "^7.6 || ^8.7 || ^9.5"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                },
+                "typo3/cms": {
+                    "extension-key": "mask_export",
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/public"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IchHabRecht\\MaskExport\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nicole Cordes",
+                    "email": "typo3@cordes.co",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Export your mask elements as extension",
+            "homepage": "https://github.com/IchHabRecht/mask_export",
+            "keywords": [
+                "TYPO3 CMS",
+                "content elements",
+                "export",
+                "mask",
+                "wizard"
+            ],
+            "time": "2019-05-20T15:08:56+00:00"
+        },
+        {
+            "name": "kpww/kpww",
+            "version": "1.1.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/kpww",
+                "reference": "9927a4b8cd7972c0c3c01d14546025612b3fa265",
+                "shasum": null
+            },
+            "require": {
+                "typo3/cms-core": "^8.7",
+                "typo3/cms-fluid-styled-content": "^8.7",
+                "typo3/cms-rte-ckeditor": "^8.7"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "Kpww\\Kpww\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "homepage": "http://kpww.pl",
+            "keywords": [
+                "TYPO3 CMS"
+            ]
+        },
+        {
+            "name": "mask/mask",
+            "version": "v3.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gernott/mask.git",
+                "reference": "21135c758d41838b4e4e6fdf617ae79aa0f4dadc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gernott/mask/zipball/21135c758d41838b4e4e6fdf617ae79aa0f4dadc",
+                "reference": "21135c758d41838b4e4e6fdf617ae79aa0f4dadc",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "typo3/cms-core": "^8.7"
+            },
+            "replace": {
+                "mask": "self.version",
+                "typo3-ter/mask": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "MASK\\Mask\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WEBprofil - Gernot Ploiner e.U.",
+                    "role": "Developer",
+                    "email": "office@webprofil.at",
+                    "homepage": "http://www.webprofil.at"
+                }
+            ],
+            "description": "Create your own content elements and page templates. Easy to use, even without programming skills because of the comfortable drag and drop user interface. Stored in structured database tables. Style your frontend with Fluid tags. Ideal, if you want to switch from Templavoila.",
+            "homepage": "http://mask.webprofil.at/",
+            "keywords": [
+                "TYPO3 CMS",
+                "contentelements",
+                "mask",
+                "wizard"
+            ],
+            "time": "2018-12-07T13:49:51+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],

@@ -1,0 +1,60 @@
+{
+    "name": "ichhabrecht/mask-export",
+    "description": "Export your mask elements as extension",
+    "type": "typo3-cms-extension",
+    "keywords": [
+        "TYPO3 CMS",
+        "Mask",
+        "Export",
+        "Content Elements",
+        "Wizard"
+    ],
+    "homepage": "https://github.com/IchHabRecht/mask_export",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Nicole Cordes",
+            "email": "typo3@cordes.co",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^7.6 || ^8.7 || ^9.5",
+        "typo3/cms-extbase": "^7.6 || ^8.7 || ^9.5",
+        "typo3/cms-fluid": "^7.6 || ^8.7 || ^9.5",
+        "mask/mask": "^2.0 || ^3.0 || ^4.0"
+    },
+    "require-dev": {
+        "typo3/cms-fluid-styled-content": "^7.6 || ^8.7 || ^9.5",
+        "nimut/testing-framework": "2.x-dev || 3.x-dev || 4.x-dev"
+    },
+    "replace": {
+        "mask_export": "self.version",
+        "typo3-ter/mask-export": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "IchHabRecht\\MaskExport\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IchHabRecht\\MaskExport\\Tests\\": "Tests/"
+        }
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        },
+        "typo3/cms": {
+            "extension-key": "mask_export",
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "app-dir": ".Build",
+            "web-dir": ".Build/public"
+        }
+    }
+}

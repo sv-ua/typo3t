@@ -1,6 +1,7 @@
 {
 	"repositories": [
-		{ "type": "composer", "url": "https://composer.typo3.org/" }
+		{ "type": "composer", "url": "https://composer.typo3.org/" },
+		{  "type": "path", "url": "packages/*/"}
 	],
 	"name": "typo3/cms-base-distribution",
 	"description" : "TYPO3 CMS Base Distribution",
@@ -8,6 +9,11 @@
 	"require": {
 		"typo3/cms": "^8.7",
 		"helhum/typo3-console": "^4.4"
+	},
+	"require-dev" : {
+		"mask/mask": "^3.3.3",
+		"ichhabrecht/mask-export": "*",
+		"kpww/kpww": "^1.1.0"
 	},
 	"extra": {
 		"typo3/cms": {
