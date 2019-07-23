@@ -21,9 +21,9 @@ styles {
 ############
 page {
      fluidtemplate {
-        layoutRootPath = EXT:kpww/Resources/Private/Layouts/Page/
-        partialRootPath = EXT:kpww/Resources/Private/Partials/Page/
-        templateRootPath = EXT:kpww/Resources/Private/Templates/Page/
+         layoutRootPath = EXT:kpww/Resources/Private/Layouts/Page/
+         partialRootPath = EXT:kpww/Resources/Private/Partials/Page/
+         templateRootPath = EXT:kpww/Resources/Private/Templates/Page/
     }
     meta {
         description =
@@ -53,4 +53,21 @@ config {
     prefixLocalAnchors = all
     headerComment = build by sitepackagebuilder.com
     sendCacheHeaders = 1
+}
+
+# cat=slider/file; type=string; label=Path to template root (FE)
+plugin.tx_slider.view.templateRootPath =
+
+# cat=slider/file; type=string; label=Path to template partials (FE)
+plugin.tx_slider.view.partialRootPath =
+
+# cat=slider/file; type=string; label=Path to template layouts (FE)
+plugin.tx_slider.view.layoutRootPath =
+
+plugin.tx_news {
+    view {
+        layoutRootPath = EXT:kpww/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:kpww/Resources/Private/Partials/Page/
+        templateRootPath = EXT:kpww/Resources/Private/Templates/Page/
+    }
 }

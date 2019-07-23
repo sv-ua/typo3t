@@ -8,12 +8,14 @@
 	"license": "GPL-2.0+",
 	"require": {
 		"typo3/cms": "^8.7",
-		"helhum/typo3-console": "^4.4"
+		"helhum/typo3-console": "^4.4",
+		"georgringer/news": "^7.2"
 	},
 	"require-dev" : {
 		"mask/mask": "^3.3.3",
 		"ichhabrecht/mask-export": "*",
 		"kpww/kpww": "^1.1.0",
+		"dmitryd/typo3-realurl" : "^2.5.0",
 		"fluidtypo3/vhs": "^5.2.0"
 	},
 	"extra": {

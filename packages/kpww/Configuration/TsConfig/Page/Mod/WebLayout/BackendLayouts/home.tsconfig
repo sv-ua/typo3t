@@ -1,0 +1,41 @@
+#
+# BACKENDLAYOUT: home
+#
+mod.web_layout.BackendLayouts {
+    home {
+        title = Home
+        icon = EXT:kpww/Resources/Public/Images/BackendLayouts/default.gif
+        config {
+            backend_layout {
+                colCount = 1
+                rowCount = 3
+                rows {
+                    1 {
+                        columns {
+                            1 {
+                                name = slider
+                                colPos = 10
+                            }
+                        }
+                    }
+                    2 {
+                        columns {
+                            1 {
+                                name = description
+                                colPos = 20
+                            }
+                        }
+                    }
+                    3 {
+                        columns {
+                            1 {
+                                name = news
+                                colPos = 30
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

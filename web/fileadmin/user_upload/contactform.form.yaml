@@ -1,0 +1,65 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: contactform
+label: 'Contact form'
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: '{text-1} {text-2}'
+      recipientAddress: sergey.voronov@gmail.com
+      recipientName: ''
+      senderAddress: info@vs.net.ua
+      senderName: Info
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+      translation:
+        language: ''
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: Name
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+            required: required
+          elementDescription: ''
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: Email
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Email
+            required: required
+          elementDescription: ''
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: Message

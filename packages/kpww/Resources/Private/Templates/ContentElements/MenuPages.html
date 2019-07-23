@@ -1,0 +1,24 @@
+<div class="block_specc wow anumated fadeInUp">
+    <div class="mw1150">
+        <div class="title_descript">
+            <h2>{data.header}</h2>
+            <p>{data.subheader}</p>
+        </div>
+    </div>
+    <div class="carusel_specializcje" style="background-image: url({f:uri.resource(path:'Images/fn_realizaxja.jpg', extensionName:'kpww')});">
+        <div class="owl-carousel owl-carousel-specc">
+            <f:for each="{menu}" as="item">
+                <div class="item_spec">
+                    <a href="{item.link}" title="{item.title}" class="vn_spec">
+                        <div class="content_animate">
+                            <h3>{item.title}</h3>
+                            <div class="hidden_content">
+                                {item.data.subheader}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </f:for>
+        </div>
+    </div>
+</div>

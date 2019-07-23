@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "474a76d86c8314bb0b9e89b2d1f8d220",
+    "content-hash": "569de89fedb7ecfe261d48a9150fef9c",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -643,6 +643,73 @@
                 "php"
             ],
             "time": "2019-06-08T11:03:04+00:00"
+        },
+        {
+            "name": "georgringer/news",
+            "version": "7.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/georgringer/news.git",
+                "reference": "2ed8306bf28465126c298d01fec67b696b4cde9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/georgringer/news/zipball/2ed8306bf28465126c298d01fec67b696b4cde9f",
+                "reference": "2ed8306bf28465126c298d01fec67b696b4cde9f",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "^8.7.13|| ^9.5.0"
+            },
+            "conflict": {
+                "symfony/finder": "2.7.44 || 2.8.37 || 3.4.7 || 4.0.7"
+            },
+            "replace": {
+                "news": "self.version",
+                "typo3-ter/news": "self.version"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "nimut/testing-framework": "^1.0 || ^2.0 || ^3.0 || ^4.0"
+            },
+            "suggest": {
+                "reelworx/rx-shariff": "~11.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.x-dev"
+                },
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeorgRinger\\News\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Georg Ringer",
+                    "homepage": "http://montagmorgen.at",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Versatile news extension, based on extbase & fluid for TYPO3 CMS",
+            "homepage": "http://montagmorgen.at",
+            "keywords": [
+                "article",
+                "extension",
+                "news",
+                "typo3"
+            ],
+            "time": "2019-04-15T10:54:23+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2021,6 +2088,84 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "dmitryd/typo3-realurl",
+            "version": "2.5.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/realurl",
+                "reference": "f688299c1c636c41fb901f45d63cf5bcbcea4366",
+                "shasum": null
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.4.0,<7.3.0",
+                "typo3/cms-core": ">=6.2.0,<9.0.0"
+            },
+            "conflict": {
+                "bednee/cooluri": ">0.0.1",
+                "helhum/realurl": ">0.0.1",
+                "typo3-ter/cooluri": ">=0.0.1",
+                "typo3-ter/simulatestatic": ">0.0.1"
+            },
+            "replace": {
+                "realurl": "self.version",
+                "typo3-ter/realurl": "self.version"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.0"
+            },
+            "suggest": {
+                "typo3-ter/static-info-tables": ">=6.2.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DmitryDulepov\\Realurl\\": "Classes"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "DmitryDulepov\\Realurl\\Tests\\": "Tests/",
+                    "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "mkdir -p .Build/Web/typo3conf/ext/",
+                    "[ -L .Build/Web/typo3conf/ext/realurl ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/realurl"
+                ],
+                "test": [
+                    "export TYPO3_PATH_WEB=`pwd`/.Build/Web; export typo3DatabaseName='realurl'; export typo3DatabaseHost='127.0.0.1'; export typo3DatabaseUsername='realurl'; export typo3DatabasePassword=''; .Build/bin/phpunit --colors -c .Build/vendor/typo3/cms/typo3/sysext/core/Build/UnitTests.xml Tests/Unit/; .Build/bin/phpunit --colors -c .Build/vendor/typo3/cms/typo3/sysext/core/Build/FunctionalTests.xml Tests/Functional/"
+                ]
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Dulepov",
+                    "email": "dmitry.dulepov@gmail.com",
+                    "homepage": "http://www.dmitry-dulepov.com/"
+                }
+            ],
+            "description": "Speaking URLs for TYPO3",
+            "homepage": "https://github.com/dmitryd/typo3-realurl",
+            "keywords": [
+                "CMS",
+                "RealURL",
+                "TYPO3",
+                "realurl",
+                "typo3"
+            ],
+            "time": "2018-07-09T00:00:00+00:00"
+        },
         {
             "name": "fluidtypo3/vhs",
             "version": "5.2.0",

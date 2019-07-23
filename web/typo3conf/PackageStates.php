@@ -128,6 +128,12 @@ return [
         'kpww' => [
             'packagePath' => 'typo3conf/ext/kpww/',
         ],
+        'news' => [
+            'packagePath' => 'typo3conf/ext/news/',
+        ],
+        'realurl' => [
+            'packagePath' => 'typo3conf/ext/realurl/',
+        ],
         'vhs' => [
             'packagePath' => 'typo3conf/ext/vhs/',
         ],

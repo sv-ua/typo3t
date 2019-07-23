@@ -1,0 +1,25 @@
+<f:if condition="{data_tx_slider_slide}">
+    <div class="front_slider">
+        <div class="owl-carousel owl-carousel-slider">
+
+            <f:for each="{data_tx_slider_slide}" as="item">
+                <div class="item_front_slide">
+                    <div class="img_slider_animate"
+                         style="background-image: url({v:uri.image(src: item.data_tx_slider_image.0)});"></div>
+                    <div class="animated fadeInRight slow content__slider">
+                        <div class="mw1150">
+                            <f:if condition="{item.data.tx_slider_header}"><h2>{item.data.tx_slider_header}</h2></f:if>
+                        </div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+
+        <div class="right_social">
+            <ul>
+                <li class="scrol_to_block"><a href="#scrollposition1"> <img
+                        src="{f:uri.resource(path:'Images/mouse.png', extensionName:'kpww')}"> </a></li>
+            </ul>
+        </div>
+    </div>
+</f:if>

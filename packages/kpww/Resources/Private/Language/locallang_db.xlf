@@ -6,6 +6,24 @@
             <authorEmail>sergey.voronov@gmail.com</authorEmail>
         </header>
         <body>
+              <trans-unit id="tx_slider_slide" xml:space="preserve">
+                <source>tx_slider_slide</source>
+              </trans-unit>
+              <trans-unit id="tx_slider_slide.tx_slider_header" xml:space="preserve">
+                <source>Header</source>
+              </trans-unit>
+              <trans-unit id="tx_slider_slide.tx_slider_image" xml:space="preserve">
+                <source>Image</source>
+              </trans-unit>
+              <trans-unit id="tt_content.tx_slider_slide" xml:space="preserve">
+                <source>Slide item</source>
+              </trans-unit>
+              <trans-unit id="tt_content.CType.div._slider_" xml:space="preserve">
+                <source>slider</source>
+              </trans-unit>
+              <trans-unit id="tt_content.CType.slider_slider" xml:space="preserve">
+                <source>Slider</source>
+              </trans-unit>
         </body>
     </file>
 </xliff>

@@ -1,0 +1,18 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowSaveToExtensionPaths: true
+        allowedExtenstionPaths:
+          10:EXT:kpww/Configuration/Yaml/Forms/
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: 'EXT:kpww/Resources/Private/Form/Frontend/Templates/'
+                partialRootPaths:
+                  20: 'EXT:kpww/Resources/Private/Form/Frontend/Templates/'
+                layoutRootPaths:
+                  20: 'EXT:kpww/Resources/Private/Form/Frontend/Templates/'

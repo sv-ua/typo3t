@@ -1,0 +1,29 @@
+#
+# BACKENDLAYOUT: contact
+#
+mod.web_layout.BackendLayouts {
+contact {
+    title = Contact
+    icon = EXT:kpww/Resources/Public/Images/BackendLayouts/default.gif
+    config {
+        backend_layout {
+            colCount = 2
+            rowCount = 1
+            rows {
+                1 {
+                    columns {
+                        1 {
+                            name = text
+                            colPos = 10
+                        }
+                        2 {
+                            name = form
+                            colPos = 20
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}

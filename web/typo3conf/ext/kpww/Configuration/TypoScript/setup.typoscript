@@ -45,25 +45,31 @@ page {
                     1.current = 1
                 }
             }
+
             ifEmpty = Default
         }
+
         templateRootPaths {
             0 = EXT:kpww/Resources/Private/Templates/Page/
             1 = {$page.fluidtemplate.templateRootPath}
         }
+
         partialRootPaths {
             0 = EXT:kpww/Resources/Private/Partials/Page/
             1 = {$page.fluidtemplate.partialRootPath}
         }
+
         layoutRootPaths {
             0 = EXT:kpww/Resources/Private/Layouts/Page/
             1 = {$page.fluidtemplate.layoutRootPath}
         }
+
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
             10 {
                 references.fieldName = media
             }
+
             20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
             20 {
                 levels = 2
@@ -81,14 +87,17 @@ page {
         description {
             override.field = description
         }
+
         author = {$page.meta.author}
         author {
             override.field = author
         }
+
         keywords = {$page.meta.keywords}
         keywords {
             override.field = keywords
         }
+
         X-UA-Compatible = {$page.meta.compatible}
         X-UA-Compatible {
             attribute = http-equiv
@@ -99,15 +108,18 @@ page {
             attribute = property
             field = title
         }
+
         og:site_name {
             attribute = property
             data = TSFE:tmpl|setup|sitetitle
         }
+
         og:description = {$page.meta.description}
         og:description {
             attribute = property
             field = description
         }
+
         og:image {
             attribute = property
             stdWrap.cObject = FILES
@@ -115,6 +127,7 @@ page {
                 references {
                     data = levelfield:-1, media, slide
                 }
+
                 maxItems = 1
                 renderObj = COA
                 renderObj {
@@ -126,6 +139,7 @@ page {
                             width = 1280c
                             height = 720c
                         }
+
                         stdWrap {
                             typolink {
                                 parameter.data = TSFE:lastImgResourceInfo|3
@@ -144,7 +158,12 @@ page {
     }
 
     includeCSS {
-        kpww_layout = EXT:kpww/Resources/Public/Css/layout.min.css
+        kpww_all = EXT:kpww/Resources/Public/Css/all.css
+        kpww_animatecss = EXT:kpww/Resources/Public/Css/animatecss.css
+        kpww_bootstrap = EXT:kpww/Resources/Public/Css/bootstrap.min.css
+        kpww_owl = EXT:kpww/Resources/Public/Css/owl.carousel.css
+        kpww_owlt = EXT:kpww/Resources/Public/Css/owl.theme.default.min.css
+        kpww_style = EXT:kpww/Resources/Public/Css/style.css
     }
 
     includeJSLibs {
@@ -160,10 +179,16 @@ page {
     }
 
     includeJSFooter {
-        kpww_scripts = EXT:kpww/Resources/Public/JavaScript/Dist/scripts.js
+        kpww_scripts_jquery = EXT:kpww/Resources/Public/JavaScript/Dist/jQuery3.3.1.js
+        kpww_scripts_bootstrap = EXT:kpww/Resources/Public/JavaScript/Dist/bootstrap.min.js
+        kpww_scripts_browser = EXT:kpww/Resources/Public/JavaScript/Dist/browser.js
+        kpww_scripts_nice = EXT:kpww/Resources/Public/JavaScript/Dist/jquery.nicescroll.min.js
+        kpww_scripts_owl = EXT:kpww/Resources/Public/JavaScript/Dist/owl.carousel.min.js
+        kpww_scripts_paralasic = EXT:kpww/Resources/Public/JavaScript/Dist/paralasic.js
+        kpww_scripts_wow = EXT:kpww/Resources/Public/JavaScript/Dist/wow.js
+        kpww_scripts_scripts = EXT:kpww/Resources/Public/JavaScript/Src/script.js
     }
 }
-
 
 ################
 #### CONFIG ####
@@ -178,15 +203,16 @@ config {
     renderCharset = utf-8
     metaCharset = utf-8
     doctype = html5
+    contentObjectExceptionHandler = 0
     removeDefaultJS = {$config.removeDefaultJS}
     inlineStyle2TempFile = 1
     admPanel = {$config.admPanel}
-    debug = 0
+    debug = 1
     cache_period = 86400
     sendCacheHeaders = {$config.sendCacheHeaders}
     intTarget =
     extTarget =
-    disablePrefixComment = 1
+    disablePrefixComment = 0
     index_enable = 1
     index_externals = 1
     index_metatags = 1
@@ -196,8 +222,51 @@ config {
     noScaleUp = 1
 
     // Compression and Concatenation of CSS and JS Files
-    compressJs = 0
-    compressCss = 0
-    concatenateJs = 0
-    concatenateCss = 0
+    compressJs = 1
+    compressCss = 1
+    concatenateJs = 1
+    concatenateCss = 1
 }
+
+tt_content.slider_slider = FLUIDTEMPLATE
+tt_content.slider_slider {
+    layoutRootPaths.0 = EXT:kpww/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_slider.view.layoutRootPath}
+    partialRootPaths.0 = EXT:kpww/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_slider.view.partialRootPath}
+    templateRootPaths.0 = EXT:kpww/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_slider.view.templateRootPath}
+    templateName = Slider
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+        if.isTrue.field = tx_slider_slide
+        table = tx_slider_slide
+        pidInList.field = pid
+        where = parentid=###uid### AND deleted=0 AND hidden=0
+        orderBy = sorting
+        markers.uid.field = uid
+        as = data_tx_slider_slide
+    }
+    dataProcessing.10 {
+        dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        dataProcessing.10 {
+            if.isTrue.field = tx_slider_image
+            references {
+                fieldName = tx_slider_image
+                table = tx_slider_slide
+            }
+            as = data_tx_slider_image
+        }
+
+    }
+}
+
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            100 = EXT:kpww/Configuration/Yaml/CustomFormSetup.yaml
+        }
+    }
+}
+config.tx_realurl_enable = 1
+config.absRefPrefix = /

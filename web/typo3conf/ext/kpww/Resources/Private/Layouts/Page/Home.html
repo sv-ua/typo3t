@@ -1,0 +1,58 @@
+<div id="header">
+
+    <div class="logo_top">
+        <a href="#top">
+            <img alt="logo" src="{f:uri.resource(path:'Images/logo_top.png', extensionName:'kpww')}">
+            KPWW kancelaria prawnICZA
+            <span>PASIERBIAK WASILEWSKI I WSPÓLNICY</span>
+        </a>
+    </div>
+
+    <div class="mobile_hidden">
+
+        <div class="navigation_nav">
+            <nav>
+                <ul class="left_part">
+                    <f:for each="{mainnavigation}" as="mainnavigationItem">
+                        <li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
+                            <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}"
+                               title="{mainnavigationItem.title}">
+                                {mainnavigationItem.title}
+                            </a></li>
+                    </f:for>
+                </ul>
+            </nav>
+        </div>
+
+
+    </div>
+
+
+    <div class="mobile_toggle">
+        <div class="line_mobile line_1"></div>
+        <div class="line_mobile line_2"></div>
+        <div class="line_mobile line_3"></div>
+    </div>
+
+</div>
+<div id="main">
+    <f:render section="Main"/>
+</div>
+
+
+<!-- FOOTER -->
+<div id="footer" class="wow anumated fadeInUp">
+    <div class="mw1150">
+        <div class="bottom_footer clear">
+            <div class="left_bk_foo">
+                <ul>
+                    <li>© 2018 KPWW</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

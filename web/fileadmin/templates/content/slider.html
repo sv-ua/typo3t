@@ -1,0 +1,21 @@
+<f:if condition="{data.tx_mask_slide}">
+<ul>
+<f:for each="{data.tx_mask_slide}" as="data_item">
+<li><f:if condition="{data_item.tx_mask_header}">
+{data_item.tx_mask_header}<br />
+</f:if>
+
+
+<f:if condition="{data_item.tx_mask_image}">
+<f:for each="{data_item.tx_mask_image}" as="file">
+  <f:image image="{file}" alt="{file.alternative}" title="{file.title}" width="200" /><br />
+  {file.description} / {file.identifier}<br />
+</f:for>
+</f:if>
+
+
+</li>
+</f:for>
+</ul>
+</f:if>
+
